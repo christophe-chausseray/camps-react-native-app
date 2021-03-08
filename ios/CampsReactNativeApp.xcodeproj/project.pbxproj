@@ -20,6 +20,12 @@
 		4AF310CC0F07FD574D8CD5BB /* libPods-CampsReactNativeApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 798EA14980C042AC52AE4E89 /* libPods-CampsReactNativeApp-tvOSTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		980411DE8B168FAD6A88979A /* libPods-CampsReactNativeApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 93749ABBDC549E742D39BC68 /* libPods-CampsReactNativeApp-tvOS.a */; };
+		051148CDDCF94768BC6C29B1 /* Satisfy-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C2753E2A71D48EABBAFBEF6 /* Satisfy-Regular.ttf */; };
+		6D63303978644CA8B20C1972 /* Satisfy-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D5C18CBF3C794A82BC238232 /* Satisfy-Regular.otf */; };
+		EA147A592CDF4B7F9B09F598 /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 467B0D83CF2D45B88EA443DF /* Caveat-Bold.ttf */; };
+		3D2EADEBB5234B98AE64015B /* Caveat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3471ED4C9884A6283B6E522 /* Caveat-Medium.ttf */; };
+		3491D2C3E5AD4150A2849C0E /* Caveat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBEB4D0FFAA14BAE81BA3244 /* Caveat-Regular.ttf */; };
+		9FABA127D8EA4A2E80F91AB2 /* Caveat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63AD03E19174476EADD19FA3 /* Caveat-SemiBold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +73,12 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F5C8F85A94F65C0DA5CE4648 /* libPods-CampsReactNativeApp-CampsReactNativeAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CampsReactNativeApp-CampsReactNativeAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C2753E2A71D48EABBAFBEF6 /* Satisfy-Regular.ttf */ = {isa = PBXFileReference; name = "Satisfy-Regular.ttf"; path = "../assets/fonts/Satisfy-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D5C18CBF3C794A82BC238232 /* Satisfy-Regular.otf */ = {isa = PBXFileReference; name = "Satisfy-Regular.otf"; path = "../assets/fonts/Satisfy-Regular.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		467B0D83CF2D45B88EA443DF /* Caveat-Bold.ttf */ = {isa = PBXFileReference; name = "Caveat-Bold.ttf"; path = "../assets/fonts/Caveat-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F3471ED4C9884A6283B6E522 /* Caveat-Medium.ttf */ = {isa = PBXFileReference; name = "Caveat-Medium.ttf"; path = "../assets/fonts/Caveat-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		EBEB4D0FFAA14BAE81BA3244 /* Caveat-Regular.ttf */ = {isa = PBXFileReference; name = "Caveat-Regular.ttf"; path = "../assets/fonts/Caveat-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		63AD03E19174476EADD19FA3 /* Caveat-SemiBold.ttf */ = {isa = PBXFileReference; name = "Caveat-SemiBold.ttf"; path = "../assets/fonts/Caveat-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +193,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				798772C14EB250B378047101 /* Pods */,
+				02624533D2244E0D95195050 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +210,20 @@
 			);
 			name = Products;
 			sourceTree = "<group>";
+		};
+		02624533D2244E0D95195050 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				2C2753E2A71D48EABBAFBEF6 /* Satisfy-Regular.ttf */,
+				D5C18CBF3C794A82BC238232 /* Satisfy-Regular.otf */,
+				467B0D83CF2D45B88EA443DF /* Caveat-Bold.ttf */,
+				F3471ED4C9884A6283B6E522 /* Caveat-Medium.ttf */,
+				EBEB4D0FFAA14BAE81BA3244 /* Caveat-Regular.ttf */,
+				63AD03E19174476EADD19FA3 /* Caveat-SemiBold.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -344,6 +371,12 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				051148CDDCF94768BC6C29B1 /* Satisfy-Regular.ttf in Resources */,
+				6D63303978644CA8B20C1972 /* Satisfy-Regular.otf in Resources */,
+				EA147A592CDF4B7F9B09F598 /* Caveat-Bold.ttf in Resources */,
+				3D2EADEBB5234B98AE64015B /* Caveat-Medium.ttf in Resources */,
+				3491D2C3E5AD4150A2849C0E /* Caveat-Regular.ttf in Resources */,
+				9FABA127D8EA4A2E80F91AB2 /* Caveat-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
