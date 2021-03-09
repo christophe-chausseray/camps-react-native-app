@@ -1,8 +1,11 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, {Marker} from 'react-native-maps';
+import useListCampingItems from './hooks/useListCampingItems';
 
 const ListView = () => {
+  const {campingItems} = useListCampingItems();
+
   return (
     <MapView
       style={styles.map}
@@ -12,8 +15,16 @@ const ListView = () => {
         longitude: 2.2907234,
         latitudeDelta: 1.5,
         longitudeDelta: 1.9,
-      }}
-    />
+      }}>
+      {campingItems &&
+        campingItems.map((campingItem) => (
+          <Marker
+            key={campingItem.id}
+            coordinate={campingItem.location}
+            title={campingItem.name}
+          />
+        ))}
+    </MapView>
   );
 };
 

@@ -1,15 +1,20 @@
 import React from 'react';
 import {renderWithProviders} from './utilTests';
 import App from './App';
+import { waitFor } from '@testing-library/react-native';
 
-it('display the header with the application name', () => {
+it('display the header with the application name', async () => {
   const {getByText} = renderWithProviders(<App />);
 
-  getByText('Le bon camping');
+  await waitFor(() => {
+    getByText('Le bon camping');
+  });
 });
 
-it('display a map on the list view', () => {
+it('display a map on the list view', async () => {
   const {getByTestId} = renderWithProviders(<App />);
 
-  getByTestId('map-view');
+  await waitFor(() => {
+    getByTestId('map-view');
+  });
 });
