@@ -11,6 +11,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@apollo/client": "^3.3.11",
+    "graphql": "^15.5.0",
     "react": "16.13.1",
     "react-native": "0.63.4",
     "react-native-maps": "0.28.0"
