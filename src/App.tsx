@@ -9,13 +9,17 @@ import {client} from './ApolloClient';
 const App = () => {
   return (
     <ApolloProvider client={client}>
-      <SafeAreaView style={styles.container}>
-        <Header />
-        <ListView />
-      </SafeAreaView>
+      <RootComponent />
     </ApolloProvider>
   );
 };
+
+const RootComponent = () => (
+  <SafeAreaView style={styles.container}>
+    <Header />
+    <ListView />
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -25,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export {App, RootComponent};

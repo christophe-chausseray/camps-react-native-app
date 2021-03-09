@@ -24,4 +24,4 @@ const useListCampingItems = (): {campingItems: CampingItem[]} => {
   return {campingItems: result.data.campings};
 };
 
-export default useListCampingItems;
+export {useListCampingItems, LIST_CAMPING_ITEMS};

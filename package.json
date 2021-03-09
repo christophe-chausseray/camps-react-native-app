@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
-    "test": "jest",
+    "test": "APP_ENV=test jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "prepare": "husky install",
     "postinstall": "rndebugger-open"
@@ -29,6 +29,7 @@
     "@types/react-native": "^0.63.2",
     "@types/react-native-dotenv": "^0.2.0",
     "@types/react-test-renderer": "^16.9.2",
+    "@types/uuid": "^8.3.0",
     "babel-jest": "^25.1.0",
     "babel-plugin-transform-inline-environment-variables": "^0.4.3",
     "eslint": "^6.5.1",
@@ -40,7 +41,8 @@
     "react-native-dotenv": "^2.5.3",
     "react-native-mock-render": "^0.1.9",
     "react-test-renderer": "16.13.1",
-    "typescript": "^3.8.3"
+    "typescript": "^3.8.3",
+    "uuid": "^8.3.2"
   },
   "resolutions": {
     "@types/react": "^16"

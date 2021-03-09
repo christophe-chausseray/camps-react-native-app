@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyleSheet} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
-import useListCampingItems from './hooks/useListCampingItems';
+import {useListCampingItems} from './hooks/useListCampingItems';
 
 const ListView = () => {
   const {campingItems} = useListCampingItems();
@@ -22,6 +22,7 @@ const ListView = () => {
             key={campingItem.id}
             coordinate={campingItem.location}
             title={campingItem.name}
+            accessibilityLabel={campingItem.name}
           />
         ))}
     </MapView>

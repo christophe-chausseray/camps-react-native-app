@@ -1,13 +1,15 @@
-import React, {FC} from 'react';
+import React from 'react';
 import {render} from '@testing-library/react-native';
-import {ApolloProvider} from '@apollo/client';
-import {client} from './ApolloClient';
+import {MockedProvider} from '@apollo/client/testing';
+import {GRAPHQL_MOCKS} from './mocks';
 
-const DefaultProviders: FC = ({children}) => (
-  <ApolloProvider client={client}>{children}</ApolloProvider>
+const DefaultProviders = ({children}: {children: React.ReactElement}) => (
+  <MockedProvider mocks={GRAPHQL_MOCKS} addTypename={false}>
+    {children}
+  </MockedProvider>
 );
 
-const renderWithProviders = (ui: React.ReactElement) =>
+const renderWithMockedProviders = (ui: React.ReactElement) =>
   render(ui, {wrapper: DefaultProviders});
 
-export {renderWithProviders};
+export default renderWithMockedProviders;
