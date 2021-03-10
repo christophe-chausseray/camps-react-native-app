@@ -5,6 +5,7 @@ import {ApolloProvider} from '@apollo/client';
 import {Header} from './components';
 import {ListView} from './views/Camping/List';
 import {client} from './ApolloClient';
+import {DetailsView} from './views/Camping/Details';
 
 const App = () => {
   return (
@@ -14,12 +15,33 @@ const App = () => {
   );
 };
 
-const RootComponent = () => (
-  <SafeAreaView style={styles.container}>
-    <Header />
-    <ListView />
-  </SafeAreaView>
-);
+const RootComponent = () => {
+  const [displayDetailsView, setDisplayDetailsView] = React.useState(false);
+  const [campingId, setCampingId] = React.useState<string | null>(null);
+  const isShowCampingDetails = displayDetailsView && campingId;
+
+  const showCampingDetails = (id: string) => {
+    setDisplayDetailsView(true);
+    setCampingId(id);
+  };
+
+  const hideCampingDetails = () => {
+    setDisplayDetailsView(false);
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <Header />
+      <ListView showCampingDetails={showCampingDetails} />
+      {isShowCampingDetails && (
+        <DetailsView
+          campingId={campingId}
+          hideCampingDetails={hideCampingDetails}
+        />
+      )}
+    </SafeAreaView>
+  );
+};
 
 const styles = StyleSheet.create({
   container: {
