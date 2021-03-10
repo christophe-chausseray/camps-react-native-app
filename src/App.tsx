@@ -1,19 +1,25 @@
 import React from 'react';
 import {SafeAreaView, StyleSheet} from 'react-native';
+import {ApolloProvider} from '@apollo/client';
 
-import Header from './components/Header';
-import ListView from './views/List/ListView';
+import {Header} from './components';
+import {ListView} from './views/Camping/List';
+import {client} from './ApolloClient';
 
 const App = () => {
   return (
-    <>
-      <SafeAreaView style={styles.container}>
-        <Header />
-        <ListView />
-      </SafeAreaView>
-    </>
+    <ApolloProvider client={client}>
+      <RootComponent />
+    </ApolloProvider>
   );
 };
+
+const RootComponent = () => (
+  <SafeAreaView style={styles.container}>
+    <Header />
+    <ListView />
+  </SafeAreaView>
+);
 
 const styles = StyleSheet.create({
   container: {
@@ -23,4 +29,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default App;
+export {App, RootComponent};
