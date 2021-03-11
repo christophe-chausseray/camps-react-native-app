@@ -18,7 +18,6 @@ const App = () => {
 const RootComponent = () => {
   const [displayDetailsView, setDisplayDetailsView] = React.useState(false);
   const [campingId, setCampingId] = React.useState<string | null>(null);
-  const isShowCampingDetails = displayDetailsView && campingId;
 
   const showCampingDetails = (id: string) => {
     setDisplayDetailsView(true);
@@ -32,8 +31,10 @@ const RootComponent = () => {
   return (
     <SafeAreaView style={styles.container}>
       <Header />
-      <ListView showCampingDetails={showCampingDetails} />
-      {isShowCampingDetails && (
+      {!displayDetailsView && (
+        <ListView showCampingDetails={showCampingDetails} />
+      )}
+      {displayDetailsView && campingId && (
         <DetailsView
           campingId={campingId}
           hideCampingDetails={hideCampingDetails}

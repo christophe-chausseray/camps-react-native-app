@@ -1,5 +1,6 @@
 import {v4 as uuidv4} from 'uuid';
 import {LIST_CAMPING_ITEMS} from './../views/Camping/List/hooks/useListCampingItems';
+import {DETAIL_CAMPING_ITEM} from './../views/Camping/Details/hooks/useCampingDetails';
 
 const FAKE_CAMPINGS = [
   {
@@ -68,7 +69,44 @@ const GRAPHQL_MOCKS = [
     },
     result: {
       data: {
-        campings: FAKE_CAMPINGS,
+        campings: [
+          {
+            id: FAKE_CAMPINGS[0].id,
+            name: FAKE_CAMPINGS[0].name,
+            location: FAKE_CAMPINGS[0].location,
+          },
+          {
+            id: FAKE_CAMPINGS[1].id,
+            name: FAKE_CAMPINGS[1].name,
+            location: FAKE_CAMPINGS[1].location,
+          },
+        ],
+      },
+    },
+  },
+  {
+    request: {
+      query: DETAIL_CAMPING_ITEM,
+      variables: {
+        campingId: FAKE_CAMPINGS[0].id,
+      },
+    },
+    result: {
+      data: {
+        camping: {
+          id: FAKE_CAMPINGS[0].id,
+          name: FAKE_CAMPINGS[0].name,
+          description: FAKE_CAMPINGS[0].description,
+          image: FAKE_CAMPINGS[0].image,
+          address: FAKE_CAMPINGS[0].address,
+          zipcode: FAKE_CAMPINGS[0].zipcode,
+          city: FAKE_CAMPINGS[0].city,
+          nb_spots: FAKE_CAMPINGS[0].nb_spots,
+          nb_stars: FAKE_CAMPINGS[0].nb_stars,
+          phone_number: FAKE_CAMPINGS[0].phone_number,
+          email: FAKE_CAMPINGS[0].email,
+          website: FAKE_CAMPINGS[0].website,
+        },
       },
     },
   },
