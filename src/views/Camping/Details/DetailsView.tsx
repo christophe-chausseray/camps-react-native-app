@@ -7,7 +7,7 @@ import {
   Dimensions,
   Image,
 } from 'react-native';
-import useCampingDetails from './hooks/useCampingDetails';
+import {useCampingDetails} from './hooks/useCampingDetails';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 type DetailsViewProps = {
@@ -20,7 +20,6 @@ const DEFAULT_CAMPING_IMAGE =
 
 const displayNbStars = (nbStars: number) => {
   const content = [];
-  console.log(nbStars);
   for (let index = 0; index < nbStars; index++) {
     content.push(<Icon key={index} name="star" size={30} color="#ffd055" />);
   }
@@ -34,7 +33,6 @@ const DetailsView = ({campingId, hideCampingDetails}: DetailsViewProps) => {
       ? campingItem.image
       : DEFAULT_CAMPING_IMAGE;
 
-  console.log(campingItem);
   if (!campingItem) {
     return null;
   }
@@ -57,7 +55,11 @@ const DetailsView = ({campingId, hideCampingDetails}: DetailsViewProps) => {
             color="#ddd"
             onPress={hideCampingDetails}
           />
-          <Image style={styles.image} source={{uri: image}} />
+          <Image
+            style={styles.image}
+            source={{uri: image}}
+            accessibilityLabel={campingItem.name}
+          />
         </View>
       </View>
       <View style={styles.informationContainer}>
@@ -108,7 +110,7 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 20,
-    marginTop: 30,
+    marginTop: 70,
     textAlign: 'center',
   },
   starIconContainer: {

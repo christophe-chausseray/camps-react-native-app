@@ -1,5 +1,4 @@
-import {useLazyQuery, gql} from '@apollo/client';
-import {useEffect} from 'react';
+import {useQuery, gql} from '@apollo/client';
 import {CampingItem} from '../../../../models';
 
 const DETAIL_CAMPING_ITEM = gql`
@@ -24,24 +23,15 @@ const DETAIL_CAMPING_ITEM = gql`
 const useCampingDetails = (
   campingId: string,
 ): {campingItem: CampingItem | null} => {
-  const [getDetailedCamping, {called, loading, data}] = useLazyQuery(
-    DETAIL_CAMPING_ITEM,
-    {
-      fetchPolicy: 'network-only',
-    },
-  );
+  const result = useQuery(DETAIL_CAMPING_ITEM, {
+    variables: {campingId: campingId},
+  });
 
-  useEffect(() => {
-    if (campingId) {
-      getDetailedCamping({variables: {campingId}});
-    }
-  }, [campingId, getDetailedCamping]);
-
-  if (!called || loading) {
+  if (undefined === result.data) {
     return {campingItem: null};
   }
 
-  return {campingItem: data.camping};
+  return {campingItem: result.data.camping};
 };
 
-export default useCampingDetails;
+export {useCampingDetails, DETAIL_CAMPING_ITEM};
