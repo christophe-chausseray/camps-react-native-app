@@ -3,7 +3,10 @@ import {StyleSheet} from 'react-native';
 import MapView, {Marker} from 'react-native-maps';
 import {useListCampingItems} from './hooks/useListCampingItems';
 
-const ListView = () => {
+type ListViewProps = {
+  showCampingDetails: (id: string) => void;
+};
+const ListView = ({showCampingDetails}: ListViewProps) => {
   const {campingItems} = useListCampingItems();
 
   return (
@@ -23,6 +26,9 @@ const ListView = () => {
             coordinate={campingItem.location}
             title={campingItem.name}
             accessibilityLabel={campingItem.name}
+            onCalloutPress={() => {
+              showCampingDetails(campingItem.id);
+            }}
           />
         ))}
     </MapView>
